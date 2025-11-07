@@ -1,0 +1,7 @@
+{
+  "name": "Copy of SERHUB",
+  "description": "An application to connect users with household service providers in major Indian cities. Users can book services like cleaning, plumbing, and more after a live location check.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
