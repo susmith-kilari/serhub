@@ -23,14 +23,19 @@ export default defineConfig(({ mode }) => {
         outDir: 'dist',
         assetsDir: 'assets',
         sourcemap: true,
-        cssCodeSplit: true,
+        cssCodeSplit: false,
         rollupOptions: {
           output: {
-            assetFileNames: (assetInfo) => {
-              if (assetInfo.name === 'index.css') return 'assets/index-[hash].css';
-              return `assets/[name]-[hash][extname]`;
-            }
+            assetFileNames: 'assets/[name].[hash][extname]',
+            chunkFileNames: 'assets/[name].[hash].js',
+            entryFileNames: 'assets/[name].[hash].js'
           }
+        }
+      },
+      css: {
+        postcss: './postcss.config.cjs',
+        modules: {
+          generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
     };

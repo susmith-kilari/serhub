@@ -141,7 +141,7 @@ const App: React.FC = () => {
             isLoggedIn={false}
             onLoginClick={() => setCurrentPage("login")}
             onSignupClick={() => setCurrentPage("signup")}
-            showBackButton={currentPage !== 'landing'}
+            showBackButton={true}
             onBackClick={() => setCurrentPage('landing')}
             onLogout={() => {}}
         />
