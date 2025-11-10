@@ -16,7 +16,21 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, '.'),
+          '@': path.resolve(__dirname, './src'),
+        }
+      },
+      build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+        sourcemap: true,
+        cssCodeSplit: true,
+        rollupOptions: {
+          output: {
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name === 'index.css') return 'assets/index-[hash].css';
+              return `assets/[name]-[hash][extname]`;
+            }
+          }
         }
       }
     };

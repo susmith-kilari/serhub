@@ -5,10 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "build:css": "tailwindcss -i ./index.css -o ./dist/output.css",
-    "watch:css": "tailwindcss -i ./index.css -o ./dist/output.css --watch"
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
